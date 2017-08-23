@@ -104,7 +104,7 @@ var navItem=getAllElem('.header_nav-item'),
 
 window.onscroll=function(){
 	var scroll=document.body.scrollTop || document.documentElement.scrollTop;
-	console.log(scroll);
+	console.log(scroll,window.innerHeight,document.body.scrollHeight);
 
 // change header
 
@@ -128,7 +128,12 @@ window.onscroll=function(){
 
 // play on scroll
 
-	if(scroll>500 && scroll<1200){
+	if(scroll + 20 + window.innerHeight >= document.body.scrollHeight){
+		play('.screen2');
+		play('.screen3');
+		play('.screen4');
+		play('.screen5');
+	}else if(scroll>500 && scroll<1200){
 		play('.screen2');
 	}else if (scroll>1200 && scroll<2000){
 		play('.screen3');
